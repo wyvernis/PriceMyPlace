@@ -1,6 +1,6 @@
-# IsThisRentFr
+# PriceMyPlace
 
-IsThisRentFr is a data science project for collecting housing listings, enriching them with location-based public data, and building machine learning models to estimate a property's fair rent. The goal is to make rental prices easier to understand by showing how property characteristics, nearby amenities, safety, population, and air quality affect the predicted price.
+PriceMyPlace is a data science project for collecting housing listings, enriching them with location-based public data, and building machine learning models to estimate a property's fair rent. The goal is to make rental prices easier to understand by showing how property characteristics, nearby amenities, safety, population, and air quality affect the predicted price.
 
 ## Project Objectives
 
