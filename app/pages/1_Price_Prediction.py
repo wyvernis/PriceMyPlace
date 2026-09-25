@@ -107,36 +107,46 @@ def main():
             # Get locality defaults from data
             loc_data = df[df["Locality"] == locality] if df is not None else None
 
-            # Build input features
+            # Build input features safely
+            lat_val = pd.to_numeric(loc_data["Latitude"], errors='coerce').median() if loc_data is not None and len(loc_data) > 0 else 19.076
+            lon_val = pd.to_numeric(loc_data["Longitude"], errors='coerce').median() if loc_data is not None and len(loc_data) > 0 else 72.877
             input_data = {
                 "Area": area,
                 "Bedrooms": bhk,
                 "Bathrooms": bathrooms,
-                "Latitude": loc_data["Latitude"].median() if loc_data is not None and len(loc_data) > 0 else 19.076,
-                "Longitude": loc_data["Longitude"].median() if loc_data is not None and len(loc_data) > 0 else 72.877,
+                "Latitude": float(lat_val) if pd.notna(lat_val) else 19.076,
+                "Longitude": float(lon_val) if pd.notna(lon_val) else 72.877,
                 "Locality": locality,
                 "Property_Type": property_type,
                 "Furnishing": furnishing,
             }
 
-            # Add distance features from locality medians
-            distance_cols = [c for c in feature_info["feature_cols"] if c not in input_data]
+            # Add remaining features from locality medians/modes safely
+            categorical_cols = set(feature_info.get("categorical_cols", []))
+            remaining_cols = [c for c in feature_info["feature_cols"] if c not in input_data]
             if loc_data is not None and len(loc_data) > 0:
-                for col in distance_cols:
-                    if col in loc_data.columns:
-                        input_data[col] = float(loc_data[col].median())
+                for col in remaining_cols:
+                    if col in categorical_cols:
+                        if col in loc_data.columns and not loc_data[col].dropna().empty:
+                            input_data[col] = loc_data[col].dropna().iloc[0]
+                        else:
+                            input_data[col] = "Unknown"
                     else:
-                        input_data[col] = 0
+                        if col in loc_data.columns:
+                            val = pd.to_numeric(loc_data[col], errors='coerce').median()
+                            input_data[col] = float(val) if pd.notna(val) else 0.0
+                        else:
+                            input_data[col] = 0.0
             else:
-                for col in distance_cols:
-                    input_data[col] = 0
+                for col in remaining_cols:
+                    input_data[col] = "Unknown" if col in categorical_cols else 0.0
 
             # Predict
             try:
                 input_df = pd.DataFrame([input_data])
                 for col in feature_info["feature_cols"]:
                     if col not in input_df.columns:
-                        input_df[col] = 0
+                        input_df[col] = "Unknown" if col in categorical_cols else 0.0
                 input_df = input_df[feature_info["feature_cols"]]
 
                 X_proc = preprocessor.transform(input_df)
