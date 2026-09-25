@@ -1,0 +1,229 @@
+{
+  "best_model": "CatBoost",
+  "n_train": 3895,
+  "n_val": 900,
+  "n_test": 1199,
+  "n_features": 36,
+  "feature_columns": [
+    "Area",
+    "Bedrooms",
+    "Bathrooms",
+    "Property_Type",
+    "Furnishing",
+    "Latitude",
+    "Longitude",
+    "Locality",
+    "Nearest_Hospital_km",
+    "Nearest_School_km",
+    "Nearest_Metro_km",
+    "Nearest_Bus_Stop_km",
+    "Nearest_Park_km",
+    "Nearest_Mall_km",
+    "Crime_Rate",
+    "Population_Density",
+    "Literacy_Rate",
+    "Household_Count",
+    "AQI",
+    "PM2.5",
+    "PM10",
+    "Is_Well_Connected",
+    "Amenity_Access_Score",
+    "area_per_bhk",
+    "bhk_bathroom_ratio",
+    "log_area",
+    "distance_to_city_center",
+    "distance_to_major_transit",
+    "distance_to_railway",
+    "distance_to_metro_station",
+    "locality_listing_count",
+    "locality_median_area",
+    "area_x_distance",
+    "nearest_upcoming_infra_km",
+    "infra_completion_status",
+    "months_since_milestone"
+  ],
+  "numeric_columns": [
+    "Area",
+    "Bedrooms",
+    "Bathrooms",
+    "Latitude",
+    "Longitude",
+    "Nearest_Hospital_km",
+    "Nearest_School_km",
+    "Nearest_Metro_km",
+    "Nearest_Bus_Stop_km",
+    "Nearest_Park_km",
+    "Nearest_Mall_km",
+    "Crime_Rate",
+    "Population_Density",
+    "Literacy_Rate",
+    "Household_Count",
+    "AQI",
+    "PM2.5",
+    "PM10",
+    "Is_Well_Connected",
+    "Amenity_Access_Score",
+    "area_per_bhk",
+    "bhk_bathroom_ratio",
+    "log_area",
+    "distance_to_city_center",
+    "distance_to_major_transit",
+    "distance_to_railway",
+    "distance_to_metro_station",
+    "locality_listing_count",
+    "locality_median_area",
+    "area_x_distance",
+    "nearest_upcoming_infra_km",
+    "months_since_milestone"
+  ],
+  "categorical_columns": [
+    "Property_Type",
+    "Furnishing",
+    "Locality",
+    "infra_completion_status"
+  ],
+  "all_results": {
+    "Mean Baseline": {
+      "train": {
+        "mae": 13974831.50379411,
+        "rmse": 24582429.258266952,
+        "r2": 0.0,
+        "mape": 135.71962230359327,
+        "median_ae": 10473452.175609756
+      },
+      "validation": {
+        "mae": 14990046.650845528,
+        "rmse": 29900669.87120448,
+        "r2": -0.002502464253173242,
+        "mape": 134.4368517530123,
+        "median_ae": 10568452.175609756
+      }
+    },
+    "Median Baseline": {
+      "train": {
+        "mae": 12137142.675738126,
+        "rmse": 25693351.584774323,
+        "r2": -0.09242573721550928,
+        "mape": 74.09667809695009,
+        "median_ae": 5800000.0
+      },
+      "validation": {
+        "mae": 13563524.056666667,
+        "rmse": 31180631.132425595,
+        "r2": -0.09016796487030132,
+        "mape": 75.4193793578586,
+        "median_ae": 6000000.0
+      }
+    },
+    "Linear Regression": {
+      "train": {
+        "mae": 5343618.848845372,
+        "rmse": 10395443.978223749,
+        "r2": 0.8211716009697803,
+        "mape": 42.41584635186017,
+        "median_ae": 3300193.9667760413
+      },
+      "validation": {
+        "mae": 5974389.720849677,
+        "rmse": 12117867.509288767,
+        "r2": 0.8353445870591598,
+        "mape": 44.0081958583906,
+        "median_ae": 3585868.645356426
+      }
+    },
+    "Random Forest": {
+      "train": {
+        "mae": 2154466.0139481965,
+        "rmse": 6179299.795481736,
+        "r2": 0.9368128254768936,
+        "mape": 10.662255736085767,
+        "median_ae": 803850.8987446073
+      },
+      "validation": {
+        "mae": 4106728.6422818312,
+        "rmse": 11263660.426763222,
+        "r2": 0.857740030638602,
+        "mape": 18.70074055635595,
+        "median_ae": 1483276.873120563
+      }
+    },
+    "Gradient Boosting": {
+      "train": {
+        "mae": 1781261.5705669222,
+        "rmse": 2848381.230246515,
+        "r2": 0.9865740002599699,
+        "mape": 12.86255300159141,
+        "median_ae": 1085698.0124193802
+      },
+      "validation": {
+        "mae": 4071897.9787327894,
+        "rmse": 10843672.342583183,
+        "r2": 0.868151138121951,
+        "mape": 19.360928796947213,
+        "median_ae": 1610347.249645352
+      }
+    },
+    "XGBoost": {
+      "train": {
+        "mae": 1001859.5,
+        "rmse": 1553052.8163484975,
+        "r2": 0.9960086345672607,
+        "mape": 8.180929720401764,
+        "median_ae": 689348.0
+      },
+      "validation": {
+        "mae": 3874313.75,
+        "rmse": 10517061.679726329,
+        "r2": 0.8759740591049194,
+        "mape": 17.873036861419678,
+        "median_ae": 1402823.0
+      }
+    },
+    "LightGBM": {
+      "train": {
+        "mae": 2101835.158032767,
+        "rmse": 4584383.684118116,
+        "r2": 0.965221382010035,
+        "mape": 13.871368968272455,
+        "median_ae": 1149975.5649856962
+      },
+      "validation": {
+        "mae": 3963924.008547144,
+        "rmse": 10334601.516365092,
+        "r2": 0.8802401939154652,
+        "mape": 20.045531312046627,
+        "median_ae": 1566471.2931540224
+      }
+    },
+    "CatBoost": {
+      "train": {
+        "mae": 2161764.7377382694,
+        "rmse": 3350403.232366519,
+        "r2": 0.9814243268033341,
+        "mape": 14.782892830252948,
+        "median_ae": 1275257.5034427978
+      },
+      "validation": {
+        "mae": 3825287.429364801,
+        "rmse": 10191311.814432733,
+        "r2": 0.8835381212540567,
+        "mape": 18.47805491767803,
+        "median_ae": 1581383.8603813052
+      },
+      "test": {
+        "mae": 3743955.962239602,
+        "rmse": 11655810.126969239,
+        "r2": 0.8178065147145483,
+        "mape": 18.89622740875797,
+        "median_ae": 1559738.5595707167
+      }
+    }
+  },
+  "test_metrics": {
+    "mae": 3743955.962239602,
+    "rmse": 11655810.126969239,
+    "r2": 0.8178065147145483,
+    "mape": 18.89622740875797,
+    "median_ae": 1559738.5595707167
+  }
+}

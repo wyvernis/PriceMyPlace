@@ -1,0 +1,66 @@
+# Feature mapping configuration for PriceMyPlace Mumbai
+# Adapt column names to the actual dataset schema
+
+target:
+  price: "Price"
+
+property_features:
+  area: "Area"
+  bedrooms: "Bedrooms"
+  bathrooms: "Bathrooms"
+  property_type: "Property_Type"
+  furnishing: "Furnishing"
+
+location_features:
+  latitude: "Latitude"
+  longitude: "Longitude"
+  locality: "Locality"
+
+amenity_distances:
+  nearest_hospital_km: "Nearest_Hospital_km"
+  nearest_school_km: "Nearest_School_km"
+  nearest_metro_km: "Nearest_Metro_km"
+  nearest_bus_stop_km: "Nearest_Bus_Stop_km"
+  nearest_park_km: "Nearest_Park_km"
+  nearest_mall_km: "Nearest_Mall_km"
+
+demographics:
+  crime_rate: "Crime_Rate"
+  population_density: "Population_Density"
+  literacy_rate: "Literacy_Rate"
+  household_count: "Household_Count"
+
+air_quality:
+  aqi: "AQI"
+  pm25: "PM2.5"
+  pm10: "PM10"
+
+derived_features:
+  price_per_sqft: "Price_Per_Sqft"
+  price_per_sqft_outlier: "Price_Per_Sqft_Outlier"
+  price_tier: "Price_Tier"
+  is_well_connected: "Is_Well_Connected"
+  amenity_access_score: "Amenity_Access_Score"
+  price_vs_locality_median_pct: "Price_vs_Locality_Median_Pct"
+
+# Mumbai city center coordinates (CST/Fort area)
+city_center:
+  latitude: 18.9398
+  longitude: 72.8355
+
+# Scoring weights (configurable)
+scoring:
+  affordability:
+    hospital_weight: 0.20
+    school_weight: 0.15
+    metro_weight: 0.20
+    bus_stop_weight: 0.10
+    park_weight: 0.15
+    mall_weight: 0.10
+    crime_weight: 0.05
+    aqi_weight: 0.05
+
+  investment:
+    valuation_weight: 0.40
+    infrastructure_proximity_weight: 0.35
+    infrastructure_horizon_weight: 0.25

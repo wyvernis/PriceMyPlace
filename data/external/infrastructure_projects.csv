@@ -1,0 +1,13 @@
+project_name,latitude,longitude,project_type,status,announcement_date,construction_start,expected_completion,actual_completion,last_major_milestone,source
+Mumbai Trans Harbour Link (Atal Setu),19.0178,72.992,Bridge/Highway,Completed,2014-01-01,2018-04-01,2024-01-01,2024-01-12,2024-01-12,MMRDA / Government of Maharashtra
+Navi Mumbai International Airport (NMIA),18.922,73.116,Airport,Under Construction,2007-01-01,2020-02-01,2025-12-01,,2024-06-01,CIDCO / Adani Group
+Mumbai Metro Line 3 (Colaba-Bandra-SEEPZ),19.063,72.868,Metro Rail,Under Construction,2014-08-01,2016-10-01,2025-06-01,,2024-10-07,MMRDA
+Mumbai Metro Line 2A (Dahisar-DN Nagar),19.186,72.836,Metro Rail,Completed,2016-01-01,2018-09-01,2023-06-01,2024-04-06,2024-04-06,MMRDA
+Mumbai Metro Line 7 (Dahisar E-Andheri E),19.153,72.864,Metro Rail,Completed,2016-01-01,2018-09-01,2023-06-01,2024-04-06,2024-04-06,MMRDA
+Mumbai Metro Line 4 (Wadala-Ghatkopar-Mulund-Thane),19.105,72.915,Metro Rail,Under Construction,2018-01-01,2019-09-01,2026-12-01,,2024-06-01,MMRDA
+Navi Mumbai Metro Line 1 (Belapur-Pendhar),19.023,73.04,Metro Rail,Under Construction,2011-01-01,2019-11-01,2025-12-01,,2024-03-01,CIDCO
+Mumbai Coastal Road (South),18.964,72.81,Road/Highway,Completed,2015-01-01,2018-10-01,2023-12-01,2024-06-10,2024-06-10,BMC
+Mumbai Coastal Road (Bandra-Versova Sea Link),19.08,72.817,Road/Highway,Under Construction,2017-01-01,2021-01-01,2028-01-01,,2024-05-01,MSRDC
+Goregaon-Mulund Link Road (GMLR),19.164,72.9,Road/Highway,Under Construction,2019-01-01,2022-04-01,2027-01-01,,2024-01-01,BMC/MMRDA
+Virar-Alibaug Multimodal Corridor,19.1,72.95,Road/Highway,Under Construction,2017-01-01,2021-12-01,2028-06-01,,2024-02-01,MMRDA
+Mumbai-Ahmedabad High Speed Rail (Bullet Train),19.0603,72.8368,Rail,Under Construction,2015-12-01,2020-06-01,2028-12-01,,2024-08-01,NHSRCL

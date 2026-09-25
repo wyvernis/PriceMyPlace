@@ -1,0 +1,35 @@
+{
+  "cleaning": {
+    "rows_before": 5994,
+    "duplicates_removed": 0,
+    "outliers_flagged": 3,
+    "invalid_coords_fixed": 0,
+    "missing_filled": {},
+    "transformations": [
+      "Standardized Property_Type",
+      "Standardized Furnishing categories",
+      "Standardized Locality names",
+      "Flagged price outliers using IQR(1%-99%)"
+    ],
+    "rows_after": 5994,
+    "columns_after": 29
+  },
+  "n_features_engineered": 29,
+  "best_model": "CatBoost",
+  "test_metrics": {
+    "mae": 3743955.962239602,
+    "rmse": 11655810.126969239,
+    "r2": 0.8178065147145483,
+    "mape": 18.89622740875797,
+    "median_ae": 1559738.5595707167
+  },
+  "fair_price_distribution": {
+    "Underpriced": 1558,
+    "Fairly Priced": 1392,
+    "Above Market": 1115,
+    "Below Market": 1028,
+    "Overpriced": 901
+  },
+  "mean_affordability": 6.639039039039038,
+  "mean_investment_score": 60.05897564230897
+}
